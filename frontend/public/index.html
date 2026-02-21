@@ -1,181 +1,330 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="description" content="A product of emergent.sh" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet" />
-        <!--
-        manifest.json provides metadata used when your web app is installed on a
-        user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-        -->
-        <!--
-        Notice the use of %PUBLIC_URL% in the tags above.
-        It will be replaced with the URL of the `public` folder during the build.
-        Only files inside the `public` folder can be referenced from the HTML.
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dr. Ahmet Yılmaz - Modern diş hekimliği hizmetleri, implant, ortodonti, diş beyazlatma ve daha fazlası.">
+    <title>Dr. Ahmet Yılmaz - Diş Hekimi | İstanbul</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">Dr. Ahmet Yılmaz</div>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="#home" class="nav-link" data-testid="nav-home">Ana Sayfa</a>
+                    <a href="#services" class="nav-link" data-testid="nav-services">Hizmetler</a>
+                    <a href="#about" class="nav-link" data-testid="nav-about">Hakkımızda</a>
+                    <a href="#testimonials" class="nav-link" data-testid="nav-testimonials">Yorumlar</a>
+                    <a href="#contact" class="nav-link" data-testid="nav-contact">İletişim</a>
+                </div>
+                
+                <button class="btn-primary nav-cta" onclick="scrollToSection('appointment')" data-testid="nav-appointment-btn">
+                    <i data-lucide="calendar"></i>
+                    Randevu Al
+                </button>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" data-testid="mobile-menu-toggle">
+                    <i data-lucide="menu" id="menuIcon"></i>
+                    <i data-lucide="x" id="closeIcon" style="display: none;"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
 
-        Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-        work correctly both with client-side routing and a non-root public URL.
-        Learn how to configure a non-root public URL by running `npm run build`.
-        -->
-        <title>Emergent | Fullstack App</title>
-        <script>window.addEventListener("error",function(e){if(e.error instanceof DOMException&&e.error.name==="DataCloneError"&&e.message&&e.message.includes("PerformanceServerTiming")){e.stopImmediatePropagation();e.preventDefault()}},true);</script>
-        <script src="https://assets.emergent.sh/scripts/emergent-main.js"></script>
-        <!--
-        These two scripts have been added for the Visual Edits, please do not edit or remove them
-        -->
-        <script>
-            // Only load visual edit scripts when inside an iframe
-            if (window.self !== window.top) {
-                // Load debug monitor script
-                var debugMonitorScript = document.createElement('script');
-                debugMonitorScript.src = 'https://assets.emergent.sh/scripts/debug-monitor.js';
-                document.head.appendChild(debugMonitorScript);
+    <!-- Hero Section -->
+    <section id="home" class="hero-section" data-testid="hero-section">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="badge" data-testid="hero-badge">
+                        <span>✨ Gülüş Tasarımı Uzmanı</span>
+                    </div>
+                    <h1 class="hero-title" data-testid="hero-title">Sağlıklı Gülüşler İçin Buradayız</h1>
+                    <p class="hero-description" data-testid="hero-description">
+                        Modern diş hekimliği anlayışı ile hastalarımıza güvenli, konforlu ve estetik çözümler sunuyoruz. 
+                        15 yıllık deneyimimiz ve hasta memnuniyetine verdiğimiz önemle yanınızdayız.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn-primary" onclick="scrollToSection('appointment')" data-testid="hero-appointment-btn">
+                            <i data-lucide="calendar"></i>
+                            Online Randevu Al
+                        </button>
+                        <button class="btn-secondary" onclick="openWhatsApp()" data-testid="hero-whatsapp-btn">
+                            <i data-lucide="message-circle"></i>
+                            WhatsApp
+                        </button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Yıl Deneyim</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5000+</div>
+                            <div class="stat-label">Mutlu Hasta</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4.9</div>
+                            <div class="stat-label">
+                                <i data-lucide="star" class="star-icon"></i>
+                                Değerlendirme
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image" data-testid="hero-image">
+                    <img src="https://images.pexels.com/photos/6812463/pexels-photo-6812463.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Modern Diş Kliniği">
+                </div>
+            </div>
+        </div>
+    </section>
 
-                // Configure Tailwind
-                window.tailwind = window.tailwind || {};
-                tailwind.config = {
-                    corePlugins: { preflight: false },
-                };
+    <!-- Services Section -->
+    <section id="services" class="services-section" data-testid="services-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">HİZMETLERİMİZ</span>
+                <h2 class="section-title" data-testid="services-title">Size Nasıl Yardımcı Olabiliriz?</h2>
+                <p class="section-description">Modern ekipmanlarımız ve uzman kadromuzla geniş bir hizmet yelpazesi sunuyoruz.</p>
+            </div>
+            <div class="services-grid" id="servicesGrid">
+                <!-- Services will be rendered here by JavaScript -->
+            </div>
+        </div>
+    </section>
 
-                // Load Tailwind CDN
-                var tailwindScript = document.createElement('script');
-                tailwindScript.src = 'https://cdn.tailwindcss.com';
-                document.head.appendChild(tailwindScript);
-            }
-        </script>
-    </head>
-    <body>
-        <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div id="root"></div>
-        <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <!-- About Section -->
+    <section id="about" class="about-section" data-testid="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image" data-testid="about-image">
+                    <img src="https://images.pexels.com/photos/14235194/pexels-photo-14235194.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Dr. Ahmet Yılmaz">
+                </div>
+                <div class="about-content">
+                    <span class="section-subtitle">HAKKIMIZDA</span>
+                    <h2 class="section-title" data-testid="about-title">Dr. Ahmet Yılmaz</h2>
+                    <p class="about-text">
+                        2009 yılında İstanbul Üniversitesi Diş Hekimliği Fakültesi'nden mezun olduktan sonra, 
+                        estetik diş hekimliği alanında uzmanlaşmak için yurt içi ve yurt dışında çeşitli eğitimler aldım.
+                    </p>
+                    <p class="about-text">
+                        15 yıllık kariyerim boyunca 5000'den fazla hastaya hizmet verdim. İmplantoloji ve estetik 
+                        diş hekimliği alanlarında sertifikalarım bulunmaktadır. Hasta memnuniyetini her şeyin 
+                        önünde tutarak, en son teknolojileri kullanarak hizmet veriyorum.
+                    </p>
+                    <div class="credentials">
+                        <div class="credential-item">
+                            <div class="credential-dot"></div>
+                            <div class="credential-content">
+                                <div class="credential-title">İstanbul Üniversitesi Diş Hekimliği Fakültesi</div>
+                                <div class="credential-subtitle">Lisans, 2009</div>
+                            </div>
+                        </div>
+                        <div class="credential-item">
+                            <div class="credential-dot"></div>
+                            <div class="credential-content">
+                                <div class="credential-title">İmplantoloji Sertifikası</div>
+                                <div class="credential-subtitle">İleri Seviye, 2012</div>
+                            </div>
+                        </div>
+                        <div class="credential-item">
+                            <div class="credential-dot"></div>
+                            <div class="credential-content">
+                                <div class="credential-title">Estetik Diş Hekimliği Sertifikası</div>
+                                <div class="credential-subtitle">Uluslararası, 2015</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section" data-testid="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">HASTA YORUMLARI</span>
+                <h2 class="section-title" data-testid="testimonials-title">Hastalarımız Ne Diyor?</h2>
+                <p class="section-description">Bize güvenen hastalarımızın deneyimlerini okuyun.</p>
+            </div>
+            <div class="testimonials-grid" id="testimonialsGrid">
+                <!-- Testimonials will be rendered here by JavaScript -->
+            </div>
+        </div>
+    </section>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-        <a
-            id="emergent-badge"
-            target="_blank"
-            href="https://app.emergent.sh/?utm_source=emergent-badge"
-            style="
-                display: inline-flex !important;
-                box-sizing: border-box;
-                width: 178px;
-                height: 40px;
-                padding: 8px 12px 8px 12px;
-                align-items: center !important;
-                gap: 8px;
-                border-radius: 50px !important;
-                background: #000 !important;
-                position: fixed !important;
-                bottom: 16px;
-                right: 16px;
-                text-decoration: none;
-                font-family: -apple-system, BlinkMacSystemFont,
-                    &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell,
-                    &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;,
-                    sans-serif !important;
-                font-size: 12px !important;
-                z-index: 9999 !important;
-            "
-        >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M15.5702 8.13142C15.7729 8.0412 16.0007 8.18878 15.9892 8.4103C15.8374 11.3192 14.0965 14.0405 11.2531 15.3065C8.40964 16.5725 5.2224 16.0453 2.95912 14.2117C2.78676 14.072 2.82955 13.804 3.03219 13.7137L4.95677 12.8568C5.04866 12.8159 5.15446 12.823 5.24204 12.8725C6.73377 13.7153 8.59176 13.8649 10.2772 13.1145C11.9626 12.3641 13.0947 10.8833 13.4665 9.21075C13.4883 9.11256 13.5539 9.02918 13.6457 8.98827L15.5702 8.13142Z" fill="white"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.3066 4.74698L15.5067 5.19653C15.5759 5.35178 15.5061 5.53366 15.3508 5.60278L1.29992 11.8586C1.14467 11.9278 0.962794 11.8579 0.893675 11.7027L0.701732 11.2716L0.693457 11.2531C-1.10317 7.21778 0.711626 2.49007 4.74692 0.693443C8.78221 -1.10318 13.51 0.711693 15.3066 4.74698ZM2.82356 8.55367C2.63552 8.63739 2.41991 8.51617 2.40853 8.31065C2.28373 6.05724 3.53858 3.85787 5.72286 2.88536C7.90715 1.91286 10.3813 2.45199 11.9724 4.05256C12.1175 4.19854 12.0633 4.43988 11.8753 4.5236L2.82356 8.55367Z" fill="white"/>
-            </svg>
-            <p
-                style="
-                    color: #FFF !important;
-                    font-family: 'Inter', sans-serif !important;
-                    font-size: 13px !important;
-                    font-style: normal !important;
-                    font-weight: 600 !important;
-                    line-height: 20px !important;
-                    margin: 0 !important;
-                    white-space: nowrap !important;
-                "
-            >
-                Made with Emergent
-            </p>
-        </a>
-        <script>
-            !(function (t, e) {
-                var o, n, p, r;
-                e.__SV ||
-                    ((window.posthog = e),
-                    (e._i = []),
-                    (e.init = function (i, s, a) {
-                        function g(t, e) {
-                            var o = e.split(".");
-                            2 == o.length && ((t = t[o[0]]), (e = o[1])),
-                                (t[e] = function () {
-                                    t.push(
-                                        [e].concat(
-                                            Array.prototype.slice.call(
-                                                arguments,
-                                                0,
-                                            ),
-                                        ),
-                                    );
-                                });
-                        }
-                        ((p = t.createElement("script")).type =
-                            "text/javascript"),
-                            (p.crossOrigin = "anonymous"),
-                            (p.async = !0),
-                            (p.src =
-                                s.api_host.replace(
-                                    ".i.posthog.com",
-                                    "-assets.i.posthog.com",
-                                ) + "/static/array.js"),
-                            (r =
-                                t.getElementsByTagName(
-                                    "script",
-                                )[0]).parentNode.insertBefore(p, r);
-                        var u = e;
-                        for (
-                            void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
-                                u.people = u.people || [],
-                                u.toString = function (t) {
-                                    var e = "posthog";
-                                    return (
-                                        "posthog" !== a && (e += "." + a),
-                                        t || (e += " (stub)"),
-                                        e
-                                    );
-                                },
-                                u.people.toString = function () {
-                                    return u.toString(1) + ".people (stub)";
-                                },
-                                o =
-                                    "init me ws ys ps bs capture je Di ks register register_once register_for_session unregister unregister_for_session Ps getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Es $s createPersonProfile Is opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Ss debug xs getPageViewId captureTraceFeedback captureTraceMetric".split(
-                                        " ",
-                                    ),
-                                n = 0;
-                            n < o.length;
-                            n++
-                        )
-                            g(u, o[n]);
-                        e._i.push([i, s, a]);
-                    }),
-                    (e.__SV = 1));
-            })(document, window.posthog || []);
-            posthog.init("phc_xAvL2Iq4tFmANRE7kzbKwaSqp1HJjN7x48s3vr0CMjs", {
-                api_host: "https://us.i.posthog.com",
-                person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well,
-                session_recording: {
-                    recordCrossOriginIframes: true,
-                    capturePerformance: false,
-                },
-            });
-        </script>
-    </body>
+    <!-- Appointment Section -->
+    <section id="appointment" class="appointment-section" data-testid="appointment-section">
+        <div class="container-narrow">
+            <div class="section-header">
+                <span class="section-subtitle">RANDEVU</span>
+                <h2 class="section-title" data-testid="appointment-title">Online Randevu Alın</h2>
+                <p class="section-description">Formu doldurun, en kısa sürede size dönüş yapalım.</p>
+            </div>
+            <form class="appointment-form" id="appointmentForm" data-testid="appointment-form">
+                <div class="form-group">
+                    <label for="name">Ad Soyad *</label>
+                    <input type="text" id="name" name="name" placeholder="Adınız ve soyadınız" data-testid="appointment-name-input">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Telefon *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="0555 123 45 67" data-testid="appointment-phone-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-posta *</label>
+                        <input type="email" id="email" name="email" placeholder="ornek@email.com" data-testid="appointment-email-input">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="date">Tercih Ettiğiniz Tarih *</label>
+                    <input type="date" id="date" name="date" data-testid="appointment-date-input">
+                </div>
+                <div class="form-group">
+                    <label for="message">Mesajınız (İsteğe bağlı)</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Bizimle paylaşmak istediğiniz bir şey var mı?" data-testid="appointment-message-textarea"></textarea>
+                </div>
+                <button type="submit" class="btn-primary btn-full" data-testid="appointment-submit-btn">
+                    <i data-lucide="calendar"></i>
+                    Randevu Oluştur
+                </button>
+                <div class="form-footer">
+                    <button type="button" class="link-button" onclick="openWhatsApp()" data-testid="appointment-whatsapp-link">
+                        <i data-lucide="message-circle"></i>
+                        WhatsApp ile hızlı randevu
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section" data-testid="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">İLETİŞİM</span>
+                <h2 class="section-title" data-testid="contact-title">Bize Ulaşın</h2>
+                <p class="section-description">Sorularınız için bizimle iletişime geçmekten çekinmeyin.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i data-lucide="phone"></i>
+                        </div>
+                        <div class="contact-content">
+                            <h3>Telefon</h3>
+                            <p>+90 (555) 123 45 67</p>
+                            <p>+90 (212) 456 78 90</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i data-lucide="mail"></i>
+                        </div>
+                        <div class="contact-content">
+                            <h3>E-posta</h3>
+                            <p>info@drahmetyilmaz.com</p>
+                            <p>randevu@drahmetyilmaz.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <div class="contact-content">
+                            <h3>Adres</h3>
+                            <p>Atatürk Caddesi No: 123<br>Kadıköy / İstanbul</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i data-lucide="clock"></i>
+                        </div>
+                        <div class="contact-content">
+                            <h3>Çalışma Saatleri</h3>
+                            <p>Pazartesi - Cuma: 09:00 - 19:00</p>
+                            <p>Cumartesi: 09:00 - 17:00</p>
+                            <p>Pazar: Kapalı</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map" data-testid="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48158.305462077615!2d29.008504499999996!3d40.9888688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac7201c8830a1%3A0x5190f8d9ada1e23f!2zS2FkxLFrw7Z5LCDEsHN0YW5idWw!5e0!3m2!1str!2str!4v1234567890123!5m2!1str!2str" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" data-testid="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-title">Dr. Ahmet Yılmaz</h3>
+                    <p class="footer-text">Sağlıklı gülüşler için modern diş hekimliği hizmetleri.</p>
+                    <div class="footer-badge">
+                        <span>✨ Gülüş Tasarımı Uzmanı</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-subtitle">Hızlı Linkler</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Ana Sayfa</a></li>
+                        <li><a href="#services">Hizmetler</a></li>
+                        <li><a href="#about">Hakkımızda</a></li>
+                        <li><a href="#appointment">Randevu</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-subtitle">Sosyal Medya</h4>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank" class="social-link" data-testid="footer-instagram">
+                            <svg fill="currentColor" viewBox="0 0 24 24" width="20" height="20">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" class="social-link" data-testid="footer-facebook">
+                            <svg fill="currentColor" viewBox="0 0 24 24" width="20" height="20">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dr. Ahmet Yılmaz. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <button class="whatsapp-floating" onclick="openWhatsApp()" data-testid="whatsapp-floating-btn">
+        <i data-lucide="message-circle"></i>
+    </button>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Custom JavaScript -->
+    <script src="/js/app.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
 </html>
