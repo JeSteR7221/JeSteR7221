@@ -539,7 +539,7 @@ async def create_order(order: OrderCreate, current_user: dict = Depends(require_
         )
     
     await db.orders.insert_one(order_dict)
-    del order_dict["_id"] if "_id" in order_dict else None
+    order_dict.pop("_id", None)
     
     # Broadcast to kitchen
     await manager.broadcast_to_branch(order.branch_id, {
