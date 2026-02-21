@@ -1,0 +1,158 @@
+{
+  "identity": {
+    "name": "Lumina POS",
+    "persona": "The Midnight Chef",
+    "vibe": "Professional, High-Contrast, Efficient, Appetizing",
+    "description": "A dark-mode first POS system designed for the high-pressure, low-light environment of modern gastronomy. It prioritizes speed (touch targets), clarity (high contrast text), and appetite (rich visuals).",
+    "principles": [
+      "Touch First: If a finger can't hit it easily, it's too small. Minimum 48px targets.",
+      "Dark by Default: Restaurants are dim. Screens shouldn't be flashlights.",
+      "Status is Color: Use color ONLY to convey status (Ready, Late, Paid). Don't decorate with it.",
+      "Information Density: High density for Admin, Medium for POS, Low/Big for Kitchen."
+    ]
+  },
+  "typography": {
+    "primary_font": "Inter",
+    "heading_font": "Barlow Condensed",
+    "mono_font": "JetBrains Mono",
+    "scale": {
+      "h1": "text-4xl font-bold tracking-tight",
+      "h2": "text-3xl font-semibold tracking-tight",
+      "h3": "text-2xl font-semibold",
+      "body": "text-base font-normal leading-relaxed",
+      "small": "text-sm font-medium text-muted-foreground",
+      "ticket_header": "text-xl font-bold font-mono",
+      "price": "text-lg font-bold tracking-wide"
+    }
+  },
+  "colors": {
+    "mode": "dark",
+    "palette": {
+      "background": "#020617",
+      "surface": "#0f172a",
+      "surface_highlight": "#1e293b",
+      "border": "#334155",
+      "primary": "#f59e0b",
+      "primary_foreground": "#000000",
+      "secondary": "#334155",
+      "secondary_foreground": "#f8fafc",
+      "success": "#10b981",
+      "warning": "#f59e0b",
+      "destructive": "#ef4444",
+      "info": "#3b82f6",
+      "text_primary": "#f8fafc",
+      "text_secondary": "#94a3b8"
+    },
+    "usage": {
+      "primary": "Main Call-to-Actions (Pay, Send to Kitchen), Active States",
+      "success": "Completed Orders, Paid Status, 'Ready' in KDS",
+      "destructive": "Void Item, Cancel Order, 'Late' in KDS",
+      "surface": "Card backgrounds, Sidebar",
+      "background": "App background (Deepest Slate)"
+    }
+  },
+  "layout_strategies": {
+    "pos_screen": {
+      "grid": "grid grid-cols-12 h-screen overflow-hidden",
+      "menu_section": "col-span-8 p-4 grid grid-cols-4 gap-4 overflow-y-auto content-start",
+      "ticket_section": "col-span-4 bg-surface border-l border-border flex flex-col h-full shadow-2xl"
+    },
+    "kds_screen": {
+      "grid": "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4",
+      "card_style": "bg-surface border-l-4 border-l-primary p-4 flex flex-col gap-2"
+    },
+    "admin_dashboard": {
+      "wrapper": "flex h-screen bg-background",
+      "sidebar": "w-64 bg-surface border-r border-border hidden md:flex flex-col",
+      "content": "flex-1 overflow-y-auto p-8"
+    }
+  },
+  "components": {
+    "buttons": {
+      "default": "h-10 px-4 py-2 rounded-md font-medium transition-colors",
+      "pos_action": "h-16 text-lg font-bold uppercase tracking-wider shadow-lg active:scale-95 transition-transform",
+      "icon_only": "h-12 w-12 rounded-full flex items-center justify-center hover:bg-white/10"
+    },
+    "cards": {
+      "default": "bg-surface border border-white/5 rounded-xl shadow-sm overflow-hidden",
+      "interactive": "hover:border-primary/50 transition-colors cursor-pointer active:bg-surface_highlight",
+      "menu_item": "relative aspect-square flex flex-col justify-end p-4 bg-cover bg-center group overflow-hidden rounded-xl border-0"
+    },
+    "inputs": {
+      "default": "bg-background border-input h-12 text-base focus:ring-2 focus:ring-primary/50"
+    }
+  },
+  "visual_enhancers": {
+    "glassmorphism": "backdrop-blur-xl bg-black/40 border border-white/10",
+    "gradients": {
+      "subtle_glow": "bg-gradient-to-tr from-primary/10 via-transparent to-transparent",
+      "overlay": "bg-gradient-to-t from-black/90 via-black/50 to-transparent"
+    },
+    "shadows": {
+      "elevation_1": "shadow-[0_4px_20px_-2px_rgba(0,0,0,0.5)]",
+      "neon_glow": "shadow-[0_0_15px_rgba(245,158,11,0.3)]"
+    }
+  },
+  "image_urls": {
+    "food_burgers": [
+      "https://images.unsplash.com/photo-1762922425249-144c3bb9167e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3MjQyMTd8MHwxfHNlYXJjaHwxfHxnb3VybWV0JTIwYnVyZ2VyJTIwcGxhdGV8ZW58MHx8fHwxNzcxNjEwMDI2fDA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1676300185026-81a05335809f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3MjQyMTd8MHwxfHNlYXJjaHwyfHxnb3VybWV0JTIwYnVyZ2VyJTIwcGxhdGV8ZW58MHx8fHwxNzcxNjEwMDI2fDA&ixlib=rb-4.1.0&q=85"
+    ],
+    "food_pasta": [
+      "https://images.pexels.com/photos/262961/pexels-photo-262961.jpeg",
+      "https://images.pexels.com/photos/27850103/pexels-photo-27850103.jpeg"
+    ],
+    "food_coffee": [
+      "https://images.pexels.com/photos/531761/pexels-photo-531761.jpeg",
+      "https://images.pexels.com/photos/29488014/pexels-photo-29488014.jpeg"
+    ],
+    "ambiance": [
+      "https://images.pexels.com/photos/8093532/pexels-photo-8093532.jpeg",
+      "https://images.pexels.com/photos/12802124/pexels-photo-12802124.png"
+    ]
+  },
+  "icons": {
+    "library": "lucide-react",
+    "mapping": {
+      "dashboard": "LayoutDashboard",
+      "pos": "Calculator",
+      "orders": "ChefHat",
+      "menu": "UtensilsCrossed",
+      "settings": "Settings",
+      "logout": "LogOut",
+      "trash": "Trash2",
+      "plus": "Plus",
+      "minus": "Minus",
+      "print": "Printer",
+      "wifi": "Wifi",
+      "user": "User"
+    }
+  },
+  "instructions_to_main_agent": [
+    "1. SETUP: Ensure 'dark' class is applied to the html/body tag by default. The entire app is Dark Mode.",
+    "2. POS LAYOUT: The POS screen must be full-width (no sidebar). Use a Grid layout: Left side for Categories/Products, Right side for the 'Ticket' (Cart).",
+    "3. TOUCH TARGETS: All interactive elements on the POS screen must be at least h-12 or h-14. No tiny buttons.",
+    "4. KDS (Kitchen): Use a 'Masonry' or 'Grid' layout for orders. Each order card must clearly show the Table Number and Elapsed Time.",
+    "5. QR MENU: This is the only 'Public' facing page. Make it visually rich with the food images provided. Use the 'ambiance' images for the login background.",
+    "6. COMPONENTS: Customize Shadcn components. Remove default white backgrounds and replace with 'bg-surface' (#0f172a) and 'border-white/10'.",
+    "7. TESTING: Add 'data-testid' to every button (e.g., 'btn-add-burger', 'btn-checkout')."
+  ],
+  "universal_guidelines": [
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy",
+    "Use glass-morphism effects with backdrop filters (12-24px blur)",
+    "You MUST NOT apply universal transition. Eg: transition: all. This results in breaking transforms. Always add transitions for specific interactive elements like button, input excluding transforms",
+    "You MUST NOT center align the app container, ie do not add .App { text-align: center; } in the css file. This disrupts the human natural reading flow of text",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠💭💡 for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations: separates good from extraordinary.",
+    "Main agent relies on these image URLs. Missing categories (especially sponsor logos) = main agent will use placeholder text which is FORBIDDEN",
+    "Prioritize using pre-existing components from src/components/ui when applicable",
+    "Components MUST use named exports (export const ComponentName = ...)",
+    "Pages MUST use default exports (export default function PageName() {...})",
+    "Use sonner for toasts"
+  ]
+}
