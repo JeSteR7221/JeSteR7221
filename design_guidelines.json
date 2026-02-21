@@ -1,0 +1,134 @@
+{
+  "project_name": "Modern Personal Dentist Website",
+  "design_philosophy": {
+    "identity": "E1 - The Anti-AI Designer",
+    "core_principles": [
+      "Fusion: Spa Wellness meets Medical Precision",
+      "Emotion: Trust, Calm, Hygiene, Premium Care",
+      "Content Strategy: Storytelling through smiles and comfort",
+      "Visual Language: Generous whitespace, rounded approachability, soft confidence"
+    ],
+    "anti_patterns": [
+      "No 'Bootstrap' standard grids - use asymmetry",
+      "No generic 'Clinical Blue' (#0000FF) - use Soft Sky or Teal",
+      "No sharp edges - use pill shapes and rounded-xl",
+      "No dense text blocks - use airy typography"
+    ]
+  },
+  "typography": {
+    "font_family": {
+      "heading": ["Plus Jakarta Sans", "sans-serif"],
+      "body": ["Inter", "sans-serif"],
+      "accent": ["Playfair Display", "serif"]
+    },
+    "scale": {
+      "h1": "text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight",
+      "h2": "text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight",
+      "h3": "text-2xl md:text-3xl font-semibold",
+      "body": "text-base md:text-lg text-slate-600 leading-relaxed",
+      "caption": "text-sm font-medium tracking-wide uppercase text-slate-500"
+    },
+    "imports": [
+      "@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');"
+    ]
+  },
+  "colors": {
+    "theme": "light",
+    "palette": {
+      "primary": {
+        "DEFAULT": "#0ea5e9",
+        "foreground": "#ffffff",
+        "50": "#f0f9ff",
+        "100": "#e0f2fe",
+        "500": "#0ea5e9",
+        "600": "#0284c7",
+        "900": "#0c4a6e"
+      },
+      "secondary": {
+        "DEFAULT": "#64748b",
+        "foreground": "#ffffff",
+        "100": "#f1f5f9",
+        "200": "#e2e8f0"
+      },
+      "background": "#ffffff",
+      "surface": "#f8fafc",
+      "surface_highlight": "#f1f5f9",
+      "text": {
+        "main": "#0f172a",
+        "muted": "#64748b",
+        "inverted": "#ffffff"
+      },
+      "accent": {
+        "gold": "#f59e0b",
+        "teal": "#14b8a6"
+      }
+    },
+    "gradients": {
+      "hero": "bg-gradient-to-br from-slate-50 to-sky-50",
+      "card_hover": "hover:bg-gradient-to-br hover:from-white hover:to-sky-50/50"
+    }
+  },
+  "layout_grid": {
+    "container": "container mx-auto px-4 md:px-6 max-w-7xl",
+    "spacing": {
+      "section_y": "py-24 md:py-32",
+      "element_gap": "gap-8 md:gap-12"
+    },
+    "bento_grid": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+  },
+  "components": {
+    "buttons": {
+      "primary": "rounded-full bg-primary text-white px-8 py-4 font-semibold shadow-lg shadow-primary/20 hover:shadow-primary/30 hover:-translate-y-1 transition-all duration-300 flex items-center gap-2",
+      "secondary": "rounded-full bg-white text-slate-900 border border-slate-200 px-8 py-4 font-semibold hover:bg-slate-50 transition-all duration-300 flex items-center gap-2",
+      "ghost": "text-slate-600 hover:text-primary font-medium transition-colors"
+    },
+    "cards": {
+      "service": "group relative bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-sky-500/5 transition-all duration-300 hover:-translate-y-1 overflow-hidden",
+      "testimonial": "bg-slate-50 p-8 rounded-2xl border border-transparent hover:border-sky-100 transition-colors"
+    },
+    "inputs": {
+      "default": "rounded-xl border-slate-200 bg-white px-4 py-3 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none"
+    }
+  },
+  "ui_patterns": {
+    "glassmorphism": "backdrop-blur-xl bg-white/70 border border-white/20 shadow-lg",
+    "soft_shadow": "shadow-[0_8px_30px_rgb(0,0,0,0.04)]",
+    "micro_interactions": "active:scale-95 transition-transform duration-150"
+  },
+  "assets": {
+    "images": {
+      "hero_bg": "https://images.pexels.com/photos/305567/pexels-photo-305567.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "doctor_female": "https://images.pexels.com/photos/12917343/pexels-photo-12917343.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "doctor_male": "https://images.pexels.com/photos/14235194/pexels-photo-14235194.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "clinic_interior": "https://images.pexels.com/photos/6812463/pexels-photo-6812463.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "patient_smile": "https://images.unsplash.com/photo-1674775372064-8c75d3f8c757?crop=entropy&cs=srgb&fm=jpg&q=85"
+    },
+    "icons": "Lucide React (Default)"
+  },
+  "sections": {
+    "header": "Sticky, glassmorphism effect. Logo left, Nav center (hidden mobile), CTA right.",
+    "hero": "Split layout. Left: Typography + CTA + Trusted Badges. Right: High-quality cut-out of Doctor or Immersive Clinic Photo with soft gradient overlay.",
+    "services": "Bento Grid layout. Each card emphasizes an icon + clear title. Hover reveals 'Learn More' arrow.",
+    "about": "Asymmetric layout. Text on one side, collage of 2-3 images (Doctor, Diploma, Clinic detail) on other.",
+    "testimonials": "Carousel or Masonry grid. Focus on stars and emotional keywords.",
+    "appointment": "Clean form on a soft surface (slate-50). Multi-step feel or clean vertical stack.",
+    "footer": "Clean, organized. Map integration essential. 'Gülüş Tasarımı Uzmanı' badge."
+  },
+  "universal_guidelines": [
+    "Always use 'Plus Jakarta Sans' for headings and 'Inter' for body.",
+    "Do NOT use pure black (#000000). Use Slate-900 (#0f172a) instead.",
+    "Ensure all interactive elements have data-testid attributes.",
+    "Mobile images must be constrained to max-h-[60vh].",
+    "Use generous padding (p-6, p-8) inside cards.",
+    "Implement smooth scrolling (Lenis recommended but standard CSS scroll-behavior: smooth is MVP).",
+    "Add 'Gülüş Tasarımı Uzmanı' as a floating badge or highlighted text in Hero."
+  ],
+  "instructions_to_main_agent": [
+    "1. UPDATE tailwind.config.js to include the new colors and fonts.",
+    "2. INSTALL framer-motion for soft entrance animations (fade-in-up).",
+    "3. CREATE a Layout component that handles the Navbar and Footer.",
+    "4. USE Shadcn components for the Appointment Form (Select, Input, Calendar) but style them with 'rounded-xl'.",
+    "5. ENSURE the map is an iframe embedded in the Contact section.",
+    "6. USE the provided image URLs. Do not leave placeholders."
+  ]
+}
