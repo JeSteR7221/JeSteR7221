@@ -302,8 +302,8 @@ async def register(user: UserCreate):
     user_dict["created_at"] = datetime.now(timezone.utc).isoformat()
     
     await db.users.insert_one(user_dict)
-    del user_dict["password"]
-    del user_dict["_id"] if "_id" in user_dict else None
+    user_dict.pop("password", None)
+    user_dict.pop("_id", None)
     return {"message": "User created successfully", "user": user_dict}
 
 @api_router.post("/auth/login", response_model=TokenResponse)
@@ -358,7 +358,7 @@ async def create_branch(branch: BranchCreate, current_user: dict = Depends(requi
     branch_dict["id"] = str(uuid.uuid4())
     branch_dict["created_at"] = datetime.now(timezone.utc).isoformat()
     await db.branches.insert_one(branch_dict)
-    del branch_dict["_id"] if "_id" in branch_dict else None
+    branch_dict.pop("_id", None)
     return branch_dict
 
 @api_router.get("/branches", response_model=List[dict])
@@ -395,7 +395,7 @@ async def create_category(category: CategoryCreate, current_user: dict = Depends
     cat_dict["id"] = str(uuid.uuid4())
     cat_dict["created_at"] = datetime.now(timezone.utc).isoformat()
     await db.categories.insert_one(cat_dict)
-    del cat_dict["_id"] if "_id" in cat_dict else None
+    cat_dict.pop("_id", None)
     return cat_dict
 
 @api_router.get("/categories", response_model=List[dict])
@@ -429,7 +429,7 @@ async def create_product(product: ProductCreate, current_user: dict = Depends(re
     prod_dict["total_sold"] = 0
     prod_dict["created_at"] = datetime.now(timezone.utc).isoformat()
     await db.products.insert_one(prod_dict)
-    del prod_dict["_id"] if "_id" in prod_dict else None
+    prod_dict.pop("_id", None)
     return prod_dict
 
 @api_router.get("/products", response_model=List[dict])
@@ -485,7 +485,7 @@ async def create_table(table: TableCreate, current_user: dict = Depends(require_
     table_dict = table.model_dump()
     table_dict["id"] = str(uuid.uuid4())
     await db.tables.insert_one(table_dict)
-    del table_dict["_id"] if "_id" in table_dict else None
+    table_dict.pop("_id", None)
     return table_dict
 
 @api_router.get("/tables", response_model=List[dict])
@@ -906,7 +906,7 @@ async def create_qr_order(qr_order: QROrderCreate):
     )
     
     await db.orders.insert_one(order_dict)
-    del order_dict["_id"] if "_id" in order_dict else None
+    order_dict.pop("_id", None)
     
     # Broadcast to kitchen
     await manager.broadcast_to_branch(qr_order.branch_id, {
